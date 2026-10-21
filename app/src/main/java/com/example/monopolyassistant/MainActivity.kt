@@ -6,6 +6,7 @@ import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
 import android.media.projection.MediaProjectionManager
+import android.provider.Settings
 import android.os.Build
 import android.os.Bundle
 import android.widget.Button
@@ -49,6 +50,12 @@ class MainActivity : AppCompatActivity() {
             setOnClickListener {
                 val manager = getSystemService(MEDIA_PROJECTION_SERVICE) as MediaProjectionManager
                 startActivityForResult(manager.createScreenCaptureIntent(), captureRequest)
+            }
+        })
+        root.addView(Button(this).apply {
+            text = "Enable one-tap overlay"
+            setOnClickListener {
+                startActivity(Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS))
             }
         })
         root.addView(Button(this).apply {
