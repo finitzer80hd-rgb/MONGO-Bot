@@ -1,0 +1,3 @@
+<resources>
+    <string name="accessibility_service_description">Provides a draggable, user-triggered one-tap helper overlay.</string>
+</resources>
