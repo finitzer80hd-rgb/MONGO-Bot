@@ -42,7 +42,7 @@ class MainActivity : AppCompatActivity() {
         status = TextView(this).apply { text = "Not monitoring"; textSize = 16f; setPadding(0, pad, 0, pad) }
         root.addView(status)
         root.addView(TextView(this).apply {
-            text = "Reads visible screen text locally and suggests possible next steps. It does not tap or play automatically. Android will ask you to approve screen capture."
+            text = "Reads screen text locally. Optional auto mode only clicks a small allowlist of accessible labels; graphic-only controls may not work. Android will ask you to approve screen capture."
             textSize = 14f
         })
         root.addView(Button(this).apply {
@@ -53,7 +53,7 @@ class MainActivity : AppCompatActivity() {
             }
         })
         root.addView(Button(this).apply {
-            text = "Enable one-tap overlay"
+            text = "Enable accessibility overlay / auto mode"
             setOnClickListener {
                 startActivity(Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS))
             }
